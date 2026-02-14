@@ -1,30 +1,52 @@
-<style>
+/* Reset default margin */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-/* Background */
-body {
-    background-image: url('background.jpg');
+    font-family: 'Segoe UI', sans-serif;
+    background-image: url("background.jpg");
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
+    color: white;
+}
+
+/* Dark overlay for better readability */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
 }
 
 /* Layout */
 .container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 50px;
+    align-items: center;
+    padding: 100px;
     flex-wrap: wrap;
 }
 
+/* Left text */
 .text-section {
     flex: 1;
     min-width: 300px;
 }
 
+.text-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.text-section p {
+    font-size: 1.3rem;
+    opacity: 0.9;
+}
+
+/* Right image */
 .image-section {
     flex: 1;
     text-align: right;
@@ -34,6 +56,7 @@ body {
 .image-section img {
     width: 250px;
     border-radius: 50%;
+    border: 3px solid white;
 }
 
 /* Mobile Responsive */
@@ -41,11 +64,15 @@ body {
     .container {
         flex-direction: column;
         text-align: center;
+        padding: 50px 20px;
     }
 
     .image-section {
         text-align: center;
-        margin-top: 20px;
+        margin-top: 30px;
+    }
+
+    .image-section img {
+        width: 200px;
     }
 }
-</style>
